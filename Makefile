@@ -184,6 +184,8 @@ ifneq ($(APP_OBJS),)
 APP_O=$(OBJ_DIR)/$(TARGET)_app.o 
 endif
 
+OBJS += rust-mm/target/debug/libmm.a
+
 $(OBJ_DIR)/$(TARGET): $(OBJS) $(APP_O) arch_lib
 	$(LD) -r $(LDFLAGS) $(HEAD_OBJ) $(APP_O) $(OBJS) $(LDARCHLIB) $(LDLIBS) -o $@.o
 	$(OBJCOPY) -w -G $(GLOBAL_PREFIX)* -G _start $@.o $@.o
