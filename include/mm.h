@@ -44,6 +44,7 @@
 
 
 void init_mm(void);
+void init_page_allocator(unsigned long min, unsigned long max);
 unsigned long alloc_pages(int order);
 #define alloc_page()    alloc_pages(0)
 void free_pages(void *pointer, int order);

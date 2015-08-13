@@ -197,7 +197,7 @@ USED static void print_chunks(void *start, int nr_pages)
  * Initialise allocator, placing addresses [@min,@max] in free pool.
  * @min and @max are PHYSICAL addresses.
  */
-static void init_page_allocator(unsigned long min, unsigned long max)
+void init_page_allocator(unsigned long min, unsigned long max)
 {
     int i;
     unsigned long range, bitmap_size;
